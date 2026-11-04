@@ -205,6 +205,34 @@ p,.intro p,.hero-copy,.statement p,.service p,.work-head p,.showroom-info-box p,
 .contact-submit:disabled{opacity:.62;cursor:wait;transform:none}
 .contact-form-status[data-state="success"]{color:#d3f0db}
 .contact-form-status[data-state="error"]{color:#ffd4c8}
+
+/* Sjednocení zarovnání nadpisů sekcí a modrá barevná paleta inspirovaná kartou Web */
+:root{--lime:#79bff0;--accent-blue:#347eae;--accent-blue-dark:#235d88;--accent-blue-soft:#d9eaf6}
+.intro,.work-head{display:grid;grid-template-columns:1fr 1.6fr;column-gap:45px;align-items:end}
+.work-head{margin-bottom:40px}
+.work-head p{max-width:510px;margin:0;justify-self:start;font-size:var(--type-body);line-height:1.7}
+.nav a:hover{color:var(--lime)}
+.cta{color:#132633;background:var(--lime)}
+.cta:hover{background:#a0d5f7}
+.eyebrow:before{background:var(--lime)}
+h1 em,.contact h2 span{color:var(--lime)}
+.ring{border-color:rgba(121,191,240,.18)}
+.ring:before,.ring:after{border-color:rgba(121,191,240,.24)}
+.statement{background:#d6e8f5;color:#202b37}
+.statement .label{color:#316b93}
+.statement p{color:#405667}
+.contact{background:#202b38}
+.contact-form-intro .label,.contactline .label{color:#add6f5!important}
+.contact-field label span:not(.contact-optional){color:#a9d5f2}
+.contact-field input:focus,.contact-field select:focus,.contact-field textarea:focus{border-color:#79bff0}
+.contact-submit{background:#79bff0;color:#142633}
+.contact-submit:hover{background:#a6d9fa}
+.contact-form-status{color:#c7e5f9}
+.work .references-grid .showroom-meta{color:#477a9e}
+.work .references-grid .showroom-btn{color:#286d9e}
+.work .references-grid .showroom-btn:hover{color:#184e79}
+@media(hover:hover) and (pointer:fine){.work .references-grid>.showroom-ref:hover{border-color:#85b8d9}}
+@media(max-width:850px){.intro,.work-head{grid-template-columns:minmax(0,1fr);row-gap:23px;align-items:start}.work-head p{max-width:510px}}
 </style>
 </head>
 <body>
