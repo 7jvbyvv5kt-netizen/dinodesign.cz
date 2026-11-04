@@ -23,7 +23,7 @@
 .grid-ref{margin-top:30px}.grid-ref .showroom-shot{max-height:540px;overflow:hidden}.grid-ref .showroom-shot img{width:100%;height:auto;display:block;object-position:top}.grid-ref .showroom-info-box{background:#f3f1e9}
 
 /* Reference vedle sebe, na mobilu pod sebou */
-.references-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}.references-grid .showroom-ref{min-width:0;display:flex;flex-direction:column}.references-grid .grid-ref{margin-top:0}.references-grid .showroom-shot,.references-grid .grid-ref .showroom-shot{height:auto;aspect-ratio:4/3;max-height:none;overflow:hidden}.references-grid .showroom-shot img,.references-grid .grid-ref .showroom-shot img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}.references-grid .showroom-info-box{display:flex;flex-direction:column;gap:18px;flex:1;padding:26px}.references-grid .showroom-info-box h3{font-size:clamp(26px,3vw,37px)}.references-grid .showroom-info-box p{font-size:14px}.references-grid .showroom-side{border:0;border-top:1px solid #d8dbcf;padding:20px 0 0;gap:16px;margin-top:auto}.references-grid .showroom-meta{margin-bottom:12px}.references-grid .showroom-meta span{font-size:10px;letter-spacing:1px}.references-grid .showroom-btn{font-size:11px}.references-grid .showroom-note{grid-column:1/-1}@media(max-width:760px){.references-grid{grid-template-columns:1fr}.references-grid .showroom-shot,.references-grid .grid-ref .showroom-shot{aspect-ratio:16/10}.references-grid .showroom-info-box{padding:24px}}
+.references-grid .showroom-ref{min-width:0;display:flex;flex-direction:column}.references-grid .grid-ref{margin-top:0}.references-grid .showroom-shot,.references-grid .grid-ref .showroom-shot{height:auto;aspect-ratio:4/3;max-height:none;overflow:hidden}.references-grid .showroom-shot img,.references-grid .grid-ref .showroom-shot img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}.references-grid .showroom-info-box{display:flex;flex-direction:column;gap:18px;flex:1;padding:26px}.references-grid .showroom-info-box h3{font-size:clamp(26px,3vw,37px)}.references-grid .showroom-info-box p{font-size:14px}.references-grid .showroom-side{border:0;border-top:1px solid #d8dbcf;padding:20px 0 0;gap:16px;margin-top:auto}.references-grid .showroom-meta{margin-bottom:12px}.references-grid .showroom-meta span{font-size:10px;letter-spacing:1px}.references-grid .showroom-btn{font-size:11px}.references-grid .showroom-note{grid-column:1/-1}@media(max-width:760px){.references-grid .showroom-shot,.references-grid .grid-ref .showroom-shot{aspect-ratio:16/10}.references-grid .showroom-info-box{padding:24px}}
 
 /* Barevná varianta 2: slonová kost, antracit, tlumená měď */
 :root{--ink:#26272b;--paper:#f8f6f2;--lime:#d99a7e;--line:#ded8d1;--muted:#68646a}
@@ -62,14 +62,14 @@ h2,.intro h2,.work-head h2,.statement h2,.contact h2{font-size:var(--type-h2);li
 h3,.service h3,.project-info h3,.showroom-info-box h3,.references-grid .showroom-info-box h3{font-size:var(--type-h3);line-height:1.2;letter-spacing:0;font-weight:750}
 p,.intro p,.hero-copy,.statement p,.service p,.work-head p,.showroom-info-box p,.references-grid .showroom-info-box p,.contactline p{font-size:var(--type-body);line-height:1.7;letter-spacing:.005em}
 .label,.eyebrow{font-size:.75rem;letter-spacing:.15em;line-height:1.4}
-.references-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:stretch;width:100%}
+
 .references-grid>.showroom-ref{width:100%;min-width:0;margin:0;display:flex;flex-direction:column}
 .references-grid .showroom-info-box{flex:1}
-@media(max-width:680px){.references-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:680px){}
 @media(max-width:520px){h1,.hero h1{font-size:clamp(3.3rem,13vw,5.5rem)}}
 
 /* Tři kompaktní reference – jednotné karty a krátké popisy */
-.references-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+
 .references-grid .showroom-info-box{padding:22px;gap:14px}
 .references-grid .showroom-info-box h3{font-size:clamp(1.45rem,2vw,1.9rem)}
 .references-grid .showroom-info-box p{font-size:.94rem;line-height:1.55}
@@ -83,17 +83,34 @@ p,.intro p,.hero-copy,.statement p,.service p,.work-head p,.showroom-info-box p,
 .autots-mark>strong{font-size:clamp(1.8rem,3.1vw,3.5rem);font-weight:900}
 .autots-mark>small{font-size:.65rem;letter-spacing:.12em;margin-top:18px;color:#d7d9d8}
 .autots-preview-caption{position:absolute;bottom:22px;left:clamp(20px,3vw,40px);font-size:.65rem;letter-spacing:.16em;color:#b8c3ca}
-@media(max-width:1050px){.references-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:680px){.references-grid{grid-template-columns:1fr}}
+@media(max-width:1050px){}
+@media(max-width:680px){}
 
 /* Portfolio se čtyřmi referencemi – 2 × 2 */
-.references-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+
 .pivovar-preview{background:linear-gradient(135deg,#261b15,#60422c 70%,#95724c);display:flex;align-items:center;justify-content:center;padding:26px}
 .pivovar-visual{color:#fff;text-align:center;position:relative;z-index:1}
 .pivovar-visual span{font-size:clamp(.65rem,1.2vw,1rem);letter-spacing:.14em;font-weight:800}
 .pivovar-visual strong{display:block;font-size:clamp(2rem,4vw,4rem);line-height:1.05;margin:18px 0;font-weight:800}
 .pivovar-visual small{letter-spacing:.25em;text-transform:uppercase;color:#edc68d}
-@media(max-width:680px){.references-grid{grid-template-columns:1fr}}
+@media(max-width:680px){}
+
+/* Úvodní skica: intenzitu tmavé vrstvy měňte pomocí --hero-darkness (0 až 1). */
+.hero{--hero-darkness:.76;background:#24252a;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;background-image:url("images/dinodesign-hero-skica.webp");background-size:cover;background-position:center center;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;z-index:0;background:rgba(14,15,19,var(--hero-darkness));pointer-events:none}
+.hero>.wrap{position:relative;z-index:2}
+.hero .ring{display:none}
+.hero h1,.hero .eyebrow,.hero .hero-copy,.hero .hero-foot{position:relative}
+@media(max-width:650px){.hero::before{background-position:61% center}.hero{--hero-darkness:.82}}
+
+/* Jediné závazné pravidlo rozložení portfolia: 3 sloupce na desktopu. */
+.references-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;width:100%;align-items:stretch}
+.references-grid>article{min-width:0;margin:0}
+.references-grid .showroom-shot,.references-grid .grid-ref .showroom-shot{height:auto;aspect-ratio:4/3;max-height:none;overflow:hidden}
+.references-grid .showroom-shot img,.references-grid .grid-ref .showroom-shot img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+@media(min-width:761px) and (max-width:1024px){.references-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.references-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
