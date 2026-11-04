@@ -20,7 +20,8 @@
 
 /* Jediná reference – Show-Room.pro */
 .showroom-ref{background:#f3f1e9;overflow:hidden;border:1px solid #e0e1d6}.showroom-shot{display:block;width:100%;background:#111}.showroom-shot img{display:block;width:100%;height:auto}.showroom-info-box{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;padding:34px}.showroom-meta{display:flex;flex-wrap:wrap;gap:10px 12px;margin-bottom:18px}.showroom-meta span{display:inline-block;border:1px solid #cfd3c4;padding:9px 12px;border-radius:999px;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700;color:#4b564b}.showroom-info-box h3{font-size:42px;letter-spacing:-.02em;margin:0 0 14px}.showroom-info-box p{font-size:16px;line-height:1.7;color:#616960;margin:0}.showroom-side{display:flex;flex-direction:column;justify-content:space-between;gap:18px;border-left:1px solid #d8dbcf;padding-left:30px}.showroom-side .label{margin-bottom:10px}.showroom-btn{display:inline-block;background:#171b19;color:#fff;border-radius:100px;padding:16px 22px;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;align-self:flex-start}.showroom-note{font-size:13px;color:#72786f;margin-top:16px}.showroom-hidden-note{padding-top:34px;border-top:1px solid #d4d8cc;margin-top:34px;color:#6d746b;font-size:13px;line-height:1.7}.showroom-hidden-note strong{color:#171b19}@media(max-width:850px){.showroom-info-box{grid-template-columns:1fr}.showroom-side{border-left:0;padding-left:0;border-top:1px solid #d8dbcf;padding-top:24px}}
-.grid-ref{margin-top:30px}.grid-ref .showroom-shot{max-height:540px;overflow:hidden}.grid-ref .showroom-shot img{width:100%;height:auto;display:block;object-position:top}.grid-ref .showroom-info-box{background:#f3f1e9}\n
+.grid-ref{margin-top:30px}.grid-ref .showroom-shot{max-height:540px;overflow:hidden}.grid-ref .showroom-shot img{width:100%;height:auto;display:block;object-position:top}.grid-ref .showroom-info-box{background:#f3f1e9}
+
 /* Reference vedle sebe, na mobilu pod sebou */
 .references-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}.references-grid .showroom-ref{min-width:0;display:flex;flex-direction:column}.references-grid .grid-ref{margin-top:0}.references-grid .showroom-shot,.references-grid .grid-ref .showroom-shot{height:auto;aspect-ratio:4/3;max-height:none;overflow:hidden}.references-grid .showroom-shot img,.references-grid .grid-ref .showroom-shot img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}.references-grid .showroom-info-box{display:flex;flex-direction:column;gap:18px;flex:1;padding:26px}.references-grid .showroom-info-box h3{font-size:clamp(26px,3vw,37px)}.references-grid .showroom-info-box p{font-size:14px}.references-grid .showroom-side{border:0;border-top:1px solid #d8dbcf;padding:20px 0 0;gap:16px;margin-top:auto}.references-grid .showroom-meta{margin-bottom:12px}.references-grid .showroom-meta span{font-size:10px;letter-spacing:1px}.references-grid .showroom-btn{font-size:11px}.references-grid .showroom-note{grid-column:1/-1}@media(max-width:760px){.references-grid{grid-template-columns:1fr}.references-grid .showroom-shot,.references-grid .grid-ref .showroom-shot{aspect-ratio:16/10}.references-grid .showroom-info-box{padding:24px}}
 
@@ -52,6 +53,20 @@ body{background:var(--paper);color:var(--ink)}
 .statement p{color:#514641}
 .contactline p{color:#d1c6bf}
 .footer{color:#b2a5a0}
+
+/* Sjednocena typografie a jisté rozložení portfolia */
+:root{--type-h1:clamp(3.6rem,7.2vw,7.5rem);--type-h2:clamp(2.25rem,4.1vw,4rem);--type-h3:clamp(1.45rem,2.25vw,2rem);--type-body:1rem}
+body{font-size:var(--type-body);line-height:1.65}
+h1,.hero h1{font-size:var(--type-h1);line-height:1;letter-spacing:-.02em;font-weight:800}
+h2,.intro h2,.work-head h2,.statement h2,.contact h2{font-size:var(--type-h2);line-height:1.1;letter-spacing:-.015em;font-weight:750}
+h3,.service h3,.project-info h3,.showroom-info-box h3,.references-grid .showroom-info-box h3{font-size:var(--type-h3);line-height:1.2;letter-spacing:0;font-weight:750}
+p,.intro p,.hero-copy,.statement p,.service p,.work-head p,.showroom-info-box p,.references-grid .showroom-info-box p,.contactline p{font-size:var(--type-body);line-height:1.7;letter-spacing:.005em}
+.label,.eyebrow{font-size:.75rem;letter-spacing:.15em;line-height:1.4}
+.references-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:stretch;width:100%}
+.references-grid>.showroom-ref{width:100%;min-width:0;margin:0;display:flex;flex-direction:column}
+.references-grid .showroom-info-box{flex:1}
+@media(max-width:680px){.references-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:520px){h1,.hero h1{font-size:clamp(3.3rem,13vw,5.5rem)}}
 </style>
 </head>
 <body>
