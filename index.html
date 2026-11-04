@@ -111,6 +111,13 @@ p,.intro p,.hero-copy,.statement p,.service p,.work-head p,.showroom-info-box p,
 .references-grid .showroom-shot img,.references-grid .grid-ref .showroom-shot img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 @media(min-width:761px) and (max-width:1024px){.references-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.references-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Jemná paralaxa pouze obrázku. Text a tmavý překryv zůstávají pevné. */
+.hero{--hero-parallax-y:0px}
+.hero::before{inset:-95px 0;transform:translate3d(0,var(--hero-parallax-y),0);will-change:transform}
+@media(max-width:767px),(prefers-reduced-motion:reduce){
+  .hero::before{inset:0;transform:none;will-change:auto}
+}
 </style>
 </head>
 <body>
@@ -118,4 +125,30 @@ p,.intro p,.hero-copy,.statement p,.service p,.work-head p,.showroom-info-box p,
 <main><section class="section" id="sluzby"><div class="wrap"><div class="intro"><div><div class="label" style="margin-bottom:24px">01 / Co děláme</div><h2>Kreativita<br>bez hranic.</h2></div><p>Jedna myšlenka. Mnoho podob. Propojujeme silný nápad s precizním zpracováním a dovedeme projekt od návrhu až k realizaci.</p></div><div class="services"><article class="service"><div><span class="num">01 /</span><div class="symbol">✳</div></div><div><h3>Grafika</h3><p>Loga, vizuální styl, obaly výrobků, DTP, tisk a reklamní materiály.</p></div></article><article class="service"><div><span class="num">02 /</span><div class="symbol">◉</div></div><div><h3>Fotografie</h3><p>Produkty, portréty, reportáže, architektura i kreativní focení.</p></div></article><article class="service"><div><span class="num">03 /</span><div class="symbol">⌘</div></div><div><h3>Web</h3><p>Moderní responzivní prezentace, uživatelská přívětivost a obsah.</p></div></article><article class="service"><div><span class="num">04 /</span><div class="symbol">↗</div></div><div><h3>Produkce</h3><p>Eventy, promo akce, prezentace produktů, výstavy.</p></div></article></div></div></section>
 <section class="section work" id="projekty"><div class="wrap"><div class="work-head"><div><div class="label" style="margin-bottom:24px">02 / Portfolio</div><h2>Práce mluví<br>za nás.</h2></div><p>Výběr realizovaných webových projektů. Další reference budeme postupně doplňovat podle aktuálních podob stránek.</p></div><div class="references-grid"><article class="showroom-ref"><div class="showroom-shot"><img src="images/showroom-reference.webp" loading="eager" decoding="async" alt="Náhled úvodní stránky Show-Room.pro"></div><div class="showroom-info-box"><div><div class="showroom-meta"><span>Webdesign</span><span>E-commerce</span><span>Katalog vozidel</span></div><h3>Show-Room.pro</h3><p>Prodejní web s katalogem motocyklů, čtyřkolek a skútrů.</p></div><div class="showroom-side"><div><div class="label">Realizace</div><p>Produktový katalog a nabídka vozidel.</p></div><a class="showroom-btn" href="https://show-room.pro/" target="_blank" rel="noopener noreferrer">Otevřít Show-Room.pro ↗</a></div></div></article><article class="showroom-ref grid-ref"><div class="showroom-shot"><img src="images/gridhotel-novy-nahled.webp" loading="lazy" decoding="async" alt="Ukázka webu Grid Hotel Brno"></div><div class="showroom-info-box"><div><div class="showroom-meta"><span>Webdesign</span><span>Ubytování</span><span>Služby</span></div><h3>Grid Hotel</h3><p>Prezentace hotelu u Masarykova okruhu v Brně.</p></div><div class="showroom-side"><div><div class="label">Realizace</div><p>Ubytování, služby a rezervace.</p></div><a class="showroom-btn" href="https://www.gridhotel.cz/cz/uvodni-strana/" target="_blank" rel="noopener noreferrer">Otevřít Grid Hotel ↗</a></div></div></article><article class="showroom-ref autots-ref"><div class="showroom-shot"><img src="images/autotsimport.webp" loading="lazy" decoding="async" alt="Náhled webu Auto TS Import Brno"></div><div class="showroom-info-box"><div><div class="showroom-meta"><span>Webdesign</span><span>Automobily</span></div><h3>Auto TS Import</h3><p>Webová prezentace pro dovoz a prodej automobilů.</p></div><div class="showroom-side"><div><div class="label">Realizace</div><p>Dovoz a nabídka prověřených vozidel.</p></div><a class="showroom-btn" href="https://www.autotsimport.cz/" target="_blank" rel="noopener noreferrer">Otevřít Auto TS Import ↗</a></div></div></article><article class="showroom-ref pivovar-ref"><div class="showroom-shot"><img src="images/svatovaclavsky-pivovar.webp" loading="lazy" decoding="async" alt="Náhled webu Svatováclavský pivovar a pivní lázně"></div><div class="showroom-info-box"><div><div class="showroom-meta"><span>Webdesign</span><span>Gastronomie</span><span>Služby</span></div><h3>Svatováclavský pivovar</h3><p>Prezentace pivovaru, restaurace a pivních lázní.</p></div><div class="showroom-side"><div class="label">Realizace</div><p>Pivovar, restaurace a relaxace v Olomouci.</p><a class="showroom-btn" href="https://svatovaclavsky-pivovar.cz/" target="_blank" rel="noopener noreferrer">Otevřít web ↗</a></div></div></article></div><p class="showroom-note">Portfolio průběžně doplňujeme.</p><div class="showroom-hidden-note"><strong>Ostatní reference jsou dočasně skryté.</strong> Připravíme je znovu podle aktuálních webů, správných názvů a nových screenshotů.</div></div></section><section class="statement" id="studio"><div class="wrap"><div class="label" style="margin-bottom:30px">03 / O studiu</div><h2>Dobrý design není dekorace.<br>Je to způsob, jak být vidět.</h2><p>V Dinodesignu propojujeme vizuální komunikaci, technické řešení a zkušenosti z reálné produkce. Od značky přes fotografie až po web nebo událost.</p></div></section></main>
 <footer class="contact" id="kontakt"><div class="wrap"><div class="label" style="color:var(--lime);margin-bottom:30px">04 / Kontakt</div><h2>Máte nápad?<br><span>Dejme mu tvar.</span></h2><div class="contactline"><div><div class="label" style="color:#d3b4a5">Kde nás najdete</div><p>DINODESIGN<br>Cejl 74, Brno</p></div><div><div class="label" style="color:#d3b4a5">Spojme se</div><p>Telefon: <a href="tel:+420777781860" style="text-decoration:underline">+420 777 781 860</a><br><a href="https://www.google.com/maps/search/?api=1&query=Cejl+74%2C+Brno" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Otevřít adresu na mapě ↗</a></p></div></div><div class="footer"><span>© 2026 DINODESIGN</span><span>Pracovní návrh · Show-Room reference</span><a href="#nahoru">Zpět nahoru ↑</a></div></div></footer>
+<script id="dinodesign-parallax">
+(() => {
+  const hero = document.querySelector(".hero");
+  if (!hero) return;
+  const motionAllowed = window.matchMedia("(min-width: 768px) and (prefers-reduced-motion: no-preference)");
+  let frame = 0;
+  function render() {
+    frame = 0;
+    if (!motionAllowed.matches) {
+      hero.style.setProperty("--hero-parallax-y", "0px");
+      return;
+    }
+    const box = hero.getBoundingClientRect();
+    const traveled = Math.max(0, Math.min(-box.top, box.height));
+    const shift = Math.min(traveled * 0.18, 95);
+    hero.style.setProperty("--hero-parallax-y", shift.toFixed(1) + "px");
+  }
+  function queue() {
+    if (!frame) frame = window.requestAnimationFrame(render);
+  }
+  window.addEventListener("scroll", queue, {passive:true});
+  window.addEventListener("resize", queue, {passive:true});
+  if (motionAllowed.addEventListener) motionAllowed.addEventListener("change", queue);
+  queue();
+})();
+</script>
 </body></html>
