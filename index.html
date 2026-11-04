@@ -122,7 +122,7 @@ p,.intro p,.hero-copy,.statement p,.service p,.work-head p,.showroom-info-box p,
 /* CO DĚLÁME: všechny karty s pozadím přes celou plochu a textem navrchu. */
 .services .service{
   position:relative; display:flex; flex-direction:column; justify-content:space-between;
-  isolation:isolate; overflow:hidden; min-height:390px; padding:0;
+  isolation:isolate; overflow:hidden; min-height:325px; padding:0;
   background:#e9e2dc; border-radius:4px;
 }
 .services .service-image{
@@ -158,7 +158,7 @@ p,.intro p,.hero-copy,.statement p,.service p,.work-head p,.showroom-info-box p,
   .services .service-has-image:hover::before{opacity:.42}
   .services .service-has-image:hover .service-image{transform:scale(1.045)}
 }
-@media(max-width:520px){.services .service{min-height:340px}}
+@media(max-width:520px){.services .service{min-height:300px}}
 @media(prefers-reduced-motion:reduce){
   .services .service::before,.services .service-image{transition:none}
 }
