@@ -263,6 +263,44 @@ h1 em,.contact h2 span{color:var(--lime)}
 
 /* Co děláme – studená modrobílá paleta, bez původního béžového podkladu */
 #sluzby.section{background:#f1f6fa}
+
+/* KARUSEL PORTFOLIA – 4 / 2 / 1 karty, podpora dotyku, přístupné šipky */
+.work .portfolio-carousel{position:relative;min-width:0}
+.work .portfolio-carousel .references-grid{
+  display:flex;gap:17px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-padding-inline:1px;overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;align-items:stretch;
+  padding:2px 1px 10px;grid-template-columns:none;
+}
+.work .portfolio-carousel .references-grid::-webkit-scrollbar{display:none}
+.work .portfolio-carousel .references-grid>.showroom-ref{
+  flex:0 0 calc((100% - 51px) / 4);width:calc((100% - 51px) / 4);
+  scroll-snap-align:start;scroll-snap-stop:normal;
+}
+.work .portfolio-controls{display:flex;justify-content:space-between;align-items:center;gap:28px;margin-top:16px}
+.work .portfolio-progress{flex:1;height:3px;max-width:240px;background:#cddde9;border-radius:10px;overflow:hidden}
+.work .portfolio-progress-bar{display:block;height:100%;width:20%;background:#347eae;border-radius:10px;transition:width .35s ease}
+.work .portfolio-controls-buttons{display:flex;gap:9px}
+.work .portfolio-arrow{width:42px;height:42px;display:flex;justify-content:center;align-items:center;border:1px solid #b2c9da;border-radius:50%;background:#f9fbfc;color:#235d88;font-size:21px;cursor:pointer;transition:background .2s,color .2s}
+.work .portfolio-arrow:hover{background:#347eae;color:#fff}
+.work .portfolio-arrow:focus-visible{outline:3px solid #79bff0;outline-offset:2px}
+@media(max-width:1024px){
+  .work .portfolio-carousel .references-grid{grid-template-columns:none}
+  .work .portfolio-carousel .references-grid>.showroom-ref{flex-basis:calc((100% - 17px) / 2);width:calc((100% - 17px) / 2)}
+}
+@media(max-width:540px){
+  .work .portfolio-carousel .references-grid{grid-template-columns:none;gap:13px}
+  .work .portfolio-carousel .references-grid>.showroom-ref{flex-basis:88%;width:88%}
+}
+@media(prefers-reduced-motion:reduce){.work .portfolio-progress-bar{transition:none}}
+/* Jednoznačné vrstvení fotografií služeb a efekt i pro tablet s trackpadem. */
+.services .service{isolation:isolate;position:relative}
+.services .service-image{z-index:0}
+.services .service::before{z-index:1}
+.services .service .num,.services .service-copy{z-index:2}
+.services .service-has-image:hover::before,.services .service-has-image:focus-within::before,
+.services .service-has-image.is-pointer-hover::before{opacity:.22}
+.services .service-has-image:hover .service-image,.services .service-has-image.is-pointer-hover .service-image{transform:scale(1.045)}
 </style>
 </head>
 <body>
@@ -275,7 +313,8 @@ h1 em,.contact h2 span{color:var(--lime)}
 <section class="section work" id="projekty">
 <div class="wrap">
 <div class="work-head"><div><div class="label" style="margin-bottom:20px">02 / Portfolio</div><h2>Práce mluví<br>za nás.</h2></div><p>Vybrané realizace, které dostaly svůj vlastní výraz.</p></div>
-<div class="references-grid">
+<div class="portfolio-carousel" id="dinodesign-portfolio-carousel" aria-label="Výběr našich referencí">
+<div class="references-grid" id="portfolio-track">
 <article class="showroom-ref"><a class="showroom-shot" href="https://show-room.pro/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít Show-Room.pro"><img src="images/showroom-reference.webp" loading="lazy" decoding="async" alt="Náhled webu Show-Room.pro"></a><div class="showroom-info-box"><div class="showroom-meta">Webdesign · E-commerce</div><h3>Show-Room.pro</h3><p>Katalog motocyklů, čtyřkolek a skútrů.</p><a class="showroom-btn" href="https://show-room.pro/" target="_blank" rel="noopener noreferrer">Prohlédnout web ↗</a></div></article>
 <article class="showroom-ref"><a class="showroom-shot" href="https://www.gridhotel.cz/cz/uvodni-strana/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít Grid Hotel"><img src="images/gridhotel-novy-nahled.webp" loading="lazy" decoding="async" alt="Náhled webu Grid Hotel Brno"></a><div class="showroom-info-box"><div class="showroom-meta">Webdesign · Hotel</div><h3>Grid Hotel</h3><p>Prezentace hotelu u Masarykova okruhu.</p><a class="showroom-btn" href="https://www.gridhotel.cz/cz/uvodni-strana/" target="_blank" rel="noopener noreferrer">Prohlédnout web ↗</a></div></article>
 <article class="showroom-ref"><a class="showroom-shot" href="https://www.autotsimport.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít Auto TS Import"><img src="images/autotsimport.webp" loading="lazy" decoding="async" alt="Náhled webu Auto TS Import Brno"></a><div class="showroom-info-box"><div class="showroom-meta">Webdesign · Automotive</div><h3>Auto TS Import</h3><p>Prezentace dovozu a prodeje automobilů.</p><a class="showroom-btn" href="https://www.autotsimport.cz/" target="_blank" rel="noopener noreferrer">Prohlédnout web ↗</a></div></article>
@@ -283,6 +322,8 @@ h1 em,.contact h2 span{color:var(--lime)}
 <article class="showroom-ref"><a class="showroom-shot" href="https://www.enpeka.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít ENPEKA"><img src="images/enpeka-reference.svg" loading="lazy" decoding="async" alt="Ilustrační motiv pečiva pro referenci ENPEKA"></a><div class="showroom-info-box"><div class="showroom-meta">Webdesign · Potravinářství</div><h3>ENPEKA</h3><p>Prezentace pekárny a cukrárny z Vysočiny.</p><a class="showroom-btn" href="https://www.enpeka.cz/" target="_blank" rel="noopener noreferrer">Prohlédnout web ↗</a></div></article>
 <article class="showroom-ref"><a class="showroom-shot" href="https://www.drevostavbyzvysociny.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít Dřevostavby z Vysočiny"><img src="images/homestead.webp" loading="lazy" decoding="async" alt="Dřevostavby z Vysočiny – HOMESTEAD"></a><div class="showroom-info-box"><div class="showroom-meta">Webdesign · Stavebnictví</div><h3>Dřevostavby z Vysočiny</h3><p>Rodinné dřevostavby a domy na klíč.</p><a class="showroom-btn" href="https://www.drevostavbyzvysociny.cz/" target="_blank" rel="noopener noreferrer">Prohlédnout web ↗</a></div></article>
 <article class="showroom-ref"><a class="showroom-shot" href="https://www.wssolutions.cz/en/home/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít WSSolutions"><img src="images/wssolutions-reference.svg" loading="lazy" decoding="async" alt="Ilustrační motiv úspor vody pro referenci WSSolutions"></a><div class="showroom-info-box"><div class="showroom-meta">Webdesign · Technologie</div><h3>WS Solutions</h3><p>Technologie pro úsporu vody a energie.</p><a class="showroom-btn" href="https://www.wssolutions.cz/en/home/" target="_blank" rel="noopener noreferrer">Prohlédnout web ↗</a></div></article>
+</div>
+<div class="portfolio-controls"><div class="portfolio-progress" aria-hidden="true"><span class="portfolio-progress-bar"></span></div><div class="portfolio-controls-buttons"><button class="portfolio-arrow" type="button" data-direction="-1" aria-label="Předchozí reference">←</button><button class="portfolio-arrow" type="button" data-direction="1" aria-label="Další reference">→</button></div></div>
 </div></div></section><section class="statement" id="studio"><div class="wrap"><div class="label" style="margin-bottom:30px">03 / O studiu</div><h2>Dobrý design není dekorace.<br>Je to způsob, jak být vidět.</h2><p>V Dinodesignu propojujeme vizuální komunikaci, technické řešení a zkušenosti z reálné produkce. Od značky přes fotografie až po web nebo událost.</p></div></section></main>
 <footer class="contact" id="kontakt"><div class="wrap"><div class="label" style="color:var(--lime);margin-bottom:30px">04 / Kontakt</div><h2>Máte nápad?<br><span>Dejme mu tvar.</span></h2><div class="contactline"><div><div class="label" style="color:#add6f5">Kde nás najdete</div><p>DINODESIGN<br>Cejl 74, Brno</p></div><div><div class="label" style="color:#add6f5">Spojme se</div><p>Telefon: <a href="tel:+420777781860" style="text-decoration:underline">+420 777 781 860</a><br><a href="https://www.google.com/maps/search/?api=1&query=Cejl+74%2C+Brno" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Otevřít adresu na mapě ↗</a></p></div></div><div class="contact-form-wrap" id="napsat"><div class="contact-form-intro"><div class="label">Napište nám</div><h3>Začíná to zprávou.</h3><p>Popište nám stručně svůj nápad nebo projekt. Ozveme se a společně vymyslíme další krok.</p></div><form class="contact-form" id="dinodesign-contact-form" action="https://formspree.io/f/xljjzndl" method="POST">
 <input type="hidden" name="_subject" value="DINODESIGN – nová poptávka z webu">
@@ -358,6 +399,59 @@ h1 em,.contact h2 span{color:var(--lime)}
     card.addEventListener('pointerleave', () => card.classList.remove('is-pointer-hover'));
     card.addEventListener('pointercancel', () => card.classList.remove('is-pointer-hover'));
   });
+})();
+</script>
+<script id="dinodesign-portfolio-carousel-script">
+(() => {
+  const root = document.getElementById('dinodesign-portfolio-carousel');
+  if (!root) return;
+  const track = root.querySelector('#portfolio-track');
+  const cards = Array.from(track.querySelectorAll('.showroom-ref'));
+  const bar = root.querySelector('.portfolio-progress-bar');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = false;
+  let timer = null;
+  let scrollFrame = null;
+  const visible = () => window.matchMedia('(max-width: 540px)').matches ? 1 :
+    window.matchMedia('(max-width: 1024px)').matches ? 2 : 4;
+  const firstIndex = () => {
+    const first = cards.findIndex(c => c.offsetLeft + c.offsetWidth / 2 >= track.scrollLeft + track.offsetLeft);
+    return Math.max(0, first);
+  };
+  const go = (direction) => {
+    if (!cards.length) return;
+    const maxIndex = Math.max(0, cards.length - visible());
+    const target = direction > 0 ? (firstIndex() >= maxIndex ? 0 : Math.min(firstIndex()+1,maxIndex))
+      : (firstIndex() <= 0 ? maxIndex : Math.max(0,firstIndex()-1));
+    const offset = cards[target].offsetLeft - track.offsetLeft;
+    track.scrollTo({left:offset,behavior:reduceMotion.matches ? 'instant' : 'smooth'});
+  };
+  const update = () => {
+    const max = Math.max(1,cards.length-visible());
+    const pct = (Math.min(firstIndex(),max) / max) * 78 + 22;
+    bar.style.width = pct + '%';
+  };
+  root.querySelectorAll('.portfolio-arrow').forEach(btn => {
+    btn.addEventListener('click', () => {go(Number(btn.dataset.direction));});
+  });
+  const stop = () => {paused = true};
+  const resume = () => {paused = false};
+  root.addEventListener('mouseenter',stop);
+  root.addEventListener('mouseleave',resume);
+  root.addEventListener('focusin',stop);
+  root.addEventListener('focusout',event => {if(!root.contains(event.relatedTarget)) resume()});
+  root.addEventListener('pointerdown',event => {if(event.pointerType==='touch') stop()});
+  root.addEventListener('pointerup',event => {if(event.pointerType==='touch') resume()});
+  document.addEventListener('visibilitychange',update);
+  track.addEventListener('scroll',() => {
+    if(scrollFrame) cancelAnimationFrame(scrollFrame);
+    scrollFrame=requestAnimationFrame(update);
+  },{passive:true});
+  window.addEventListener('resize',update);
+  timer=setInterval(() => {
+    if(!paused && !document.hidden && !reduceMotion.matches && !window.matchMedia('(max-width: 540px)').matches) go(1);
+  },5500);
+  update();
 })();
 </script>
 </body></html>
