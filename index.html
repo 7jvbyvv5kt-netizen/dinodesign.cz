@@ -96,13 +96,13 @@ p,.intro p,.hero-copy,.statement p,.service p,.work-head p,.showroom-info-box p,
 @media(max-width:680px){}
 
 /* Úvodní skica: intenzitu tmavé vrstvy měňte pomocí --hero-darkness (0 až 1). */
-.hero{--hero-darkness:.76;background:#24252a;isolation:isolate}
+.hero{--hero-darkness:.81;background:#202b38;isolation:isolate}
 .hero::before{content:"";position:absolute;inset:0;z-index:0;background-image:url("images/dinodesign-hero-skica.webp");background-size:cover;background-position:center center;pointer-events:none}
 .hero::after{content:"";position:absolute;inset:0;z-index:0;background:rgba(31,49,71,var(--hero-darkness));pointer-events:none}
 .hero>.wrap{position:relative;z-index:2}
 .hero .ring{display:none}
 .hero h1,.hero .eyebrow,.hero .hero-copy,.hero .hero-foot{position:relative}
-@media(max-width:650px){.hero::before{background-position:61% center}.hero{--hero-darkness:.82}}
+@media(max-width:650px){.hero::before{background-position:61% center}.hero{--hero-darkness:.86}}
 
 /* Jediné závazné pravidlo rozložení portfolia: 3 sloupce na desktopu. */
 .references-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;width:100%;align-items:stretch}
@@ -252,6 +252,11 @@ h1 em,.contact h2 span{color:var(--lime)}
 .contact-privacy a{color:#b6ddf8;text-decoration:underline;text-underline-offset:3px}
 .contact-privacy a:hover,.footer a:hover{color:#79bff0}
 .footer{gap:18px;flex-wrap:wrap}
+
+/* Finální modrý podklad portfolia bez teplého růžového nádechu. */
+.work.section{background:#eaf1f6}
+.work .references-grid>.showroom-ref{background:#f9fbfc;border-color:#d5e1ea}
+.work .references-grid .showroom-shot{background:#dce8f1}
 </style>
 </head>
 <body>
