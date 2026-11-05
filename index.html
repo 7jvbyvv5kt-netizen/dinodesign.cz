@@ -154,10 +154,13 @@ p,.intro p,.hero-copy,.statement p,.service p,.work-head p,.showroom-info-box p,
   background:radial-gradient(ellipse at 72% 26%,#bbd6e8 0%,transparent 55%),
              linear-gradient(135deg,#b1cfdf 0%,#e9f1f6 55%,#b5d3e6 100%);
 }
-@media(hover:hover) and (pointer:fine){
-  .services .service-has-image:hover::before{opacity:.42}
+/* Hover i pro tablet s připojenou myší nebo trackpadem. */
+@media(any-hover:hover){
+  .services .service-has-image:hover::before{opacity:.25}
   .services .service-has-image:hover .service-image{transform:scale(1.045)}
 }
+.services .service-has-image.is-pointer-hover::before{opacity:.25}
+.services .service-has-image.is-pointer-hover .service-image{transform:scale(1.045)}
 @media(max-width:520px){.services .service{min-height:300px}}
 @media(prefers-reduced-motion:reduce){
   .services .service::before,.services .service-image{transition:none}
@@ -341,6 +344,19 @@ h1 em,.contact h2 span{color:var(--lime)}
       submit.disabled = false;
       submit.removeAttribute('aria-busy');
     }
+  });
+})();
+</script>
+<script id="dinodesign-service-pointer">
+(() => {
+  document.querySelectorAll('.services .service-has-image').forEach(card => {
+    card.addEventListener('pointerenter', event => {
+      if (event.pointerType === 'mouse' || event.pointerType === 'pen') {
+        card.classList.add('is-pointer-hover');
+      }
+    });
+    card.addEventListener('pointerleave', () => card.classList.remove('is-pointer-hover'));
+    card.addEventListener('pointercancel', () => card.classList.remove('is-pointer-hover'));
   });
 })();
 </script>
