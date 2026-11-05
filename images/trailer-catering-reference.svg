@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9f0f6"/><stop offset="1" stop-color="#bfcfdc"/></linearGradient>
+<linearGradient id="truck" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#253647"/><stop offset="1" stop-color="#111b29"/></linearGradient>
+<linearGradient id="floor" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#8da5b9"/><stop offset="1" stop-color="#d6dfe6"/></linearGradient>
+</defs>
+<rect width="1200" height="750" fill="url(#sky)"/>
+<path d="M0 582L1200 528V750H0Z" fill="url(#floor)"/>
+<circle cx="1000" cy="150" r="150" fill="#f9fbfd" opacity=".35"/>
+<path d="M0 0H1200V118H0Z" fill="#fff" opacity=".96"/>
+<g font-family="Arial,sans-serif"><text x="72" y="75" font-size="46" font-weight="900" fill="#21374b">TRAILER</text><text x="293" y="75" font-size="46" font-weight="300" fill="#347eae">CATERING</text>
+<text x="885" y="70" font-size="16" font-weight="700" fill="#526575" letter-spacing="2">FOOD  ·  BEER  ·  COFFEE</text></g>
+<g transform="translate(120 205)">
+<rect x="65" y="106" width="810" height="315" rx="18" fill="url(#truck)" stroke="#6f899b" stroke-width="5"/>
+<path d="M875 256H960L1020 336V418H875Z" fill="#283e51" stroke="#6f899b" stroke-width="5"/>
+<rect x="160" y="145" width="560" height="180" rx="7" fill="#edf4f8" stroke="#9eb7c8" stroke-width="12"/>
+<rect x="168" y="150" width="544" height="16" fill="#aac6d9"/>
+<rect x="200" y="191" width="470" height="84" fill="#d8e7f1"/>
+<path d="M203 282H670" stroke="#7f9daf" stroke-width="4"/>
+<rect x="99" y="352" width="750" height="60" rx="6" fill="#182736"/>
+<path d="M52 423H1035" stroke="#223b51" stroke-width="14"/>
+<circle cx="250" cy="437" r="69" fill="#192c3c" stroke="#8ca4b5" stroke-width="19"/><circle cx="250" cy="437" r="19" fill="#d9e5eb"/>
+<circle cx="805" cy="437" r="69" fill="#192c3c" stroke="#8ca4b5" stroke-width="19"/><circle cx="805" cy="437" r="19" fill="#d9e5eb"/>
+<rect x="235" y="199" width="400" height="62" fill="#f8fcfe" rx="5"/>
+<text x="435" y="239" fill="#243a4e" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="800" letter-spacing="3">FOOD &amp; BEVERAGE</text>
+</g>
+<rect y="682" width="1200" height="68" fill="#202e3b" opacity=".93"/>
+<text x="74" y="725" fill="#fff" font-family="Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="2">GASTRO TRAILERY  •  CATERING  •  EVENTY</text>
+</svg>
